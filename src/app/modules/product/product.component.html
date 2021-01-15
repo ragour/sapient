@@ -1,0 +1,29 @@
+<div class="img-wrap">
+    <img [src]="product?.links?.mission_patch_small">
+    <a target="_blank" class="btn-overlay" [href]="product?.links?.article_link"><i
+            class="fa fa-search-plus"></i> Quick view</a>
+</div> <!-- img-wrap.// -->
+<figcaption class="info-wrap">
+   <div class="fix-height">
+        <span class="title">{{product?.mission_name}} </span>
+        <span class="flight_number">#{{product?.flight_number}}</span>
+        <div class="price-wrap mt-2">
+            <span class="launch-year">mission id's</span>
+            <ul *ngIf="product?.mission_id.length > 0">
+                <li *ngFor="let ids of product?.mission_id">{{ids | json}}</li>
+            </ul>
+        </div> 
+        <div class="price-wrap mt-2">
+            <span class="launch-year">Launch Year: </span>
+            <span class="launch-year">{{product?.launch_year}}</span>
+        </div> 
+        <div class="price-wrap mt-2">
+            <span class="launch-year">Successful launch: </span>
+            <span class="launch-year">{{product?.launch_success}}</span>
+        </div>
+        <div class="price-wrap mt-2">
+            <span class="launch-year">Successful landing: </span>
+            <span class="launch-year">{{product?.launch_window}}</span>
+        </div>
+    </div>
+</figcaption>

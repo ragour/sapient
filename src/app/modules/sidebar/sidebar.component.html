@@ -1,0 +1,61 @@
+<div class="card">
+    <article class="filter-group">
+        <header class="card-header">
+            <a href="#"
+                data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" class="">
+                <i class="icon-control fa fa-chevron-down"></i>
+                <h6 class="title">Launch year</h6>
+            </a>
+        </header>
+        <div class="filter-content collapse show" id="collapse_1" >
+            <div class="card-body">
+
+                <ul class="list-menu">
+                    <li *ngFor="let year of listOfLaunchYear">
+                        <a [ngClass]="{'selected': isYearSelected === year}" href="#" (click)= "selectByyear(year)">{{year}}</a>
+                    </li>
+                </ul>
+
+            </div> <!-- card-body.// -->
+        </div>
+    </article> <!-- filter-group  .// -->
+
+    <article class="filter-group">
+        <header class="card-header">
+            <a href="#"
+                data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" class="">
+                <i class="icon-control fa fa-chevron-down"></i>
+                <h6 class="title">Successful Launch</h6>
+            </a>
+        </header>
+        <div class="filter-content collapse show" id="collapse_2" >
+            <div class="card-body">
+                <ul class="list-menu">
+                   <li><a (click)= "successfulLaunch('true')" [ngClass]="{'selected': islaunch === 'true'}"  href="#">True</a></li>
+                   <li><a (click)= "successfulLaunch('false')" [ngClass]="{'selected': islaunch === 'false'}" href="#">False</a></li>
+                </ul>
+
+            </div> <!-- card-body.// -->
+        </div>
+    </article> <!-- filter-group  .// -->
+
+    <article class="filter-group">
+        <header class="card-header">
+            <a href="#"
+                data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" class="">
+                <i class="icon-control fa fa-chevron-down"></i>
+                <h6 class="title">Successful landing</h6>
+            </a>
+        </header>
+        <div class="filter-content collapse show" id="collapse_3" >
+            <div class="card-body">
+                <ul class="list-menu">
+                    <li><a (click)= "successfulLanding('true')" [ngClass]="{'selected': islanding === 'true'}"  href="#">True</a></li>
+                    <li><a (click)= "successfulLanding('false')" [ngClass]="{'selected': islanding === 'false'}" href="#">False</a></li>
+                 </ul>
+
+            </div> <!-- card-body.// -->
+        </div>
+    </article> <!-- filter-group  .// -->
+
+</div> <!-- card.// -->
