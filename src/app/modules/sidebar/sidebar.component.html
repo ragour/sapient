@@ -12,7 +12,7 @@
 
                 <ul class="list-menu">
                     <li *ngFor="let year of listOfLaunchYear">
-                        <a [ngClass]="{'selected': isYearSelected === year}" href="#" (click)= "selectByyear(year)">{{year}}</a>
+                        <a [ngClass]="{'selected': isYearSelected === year}" href="javascript:void(0)" (click)= "selectByyear(year)">{{year}}</a>
                     </li>
                 </ul>
 
@@ -31,8 +31,8 @@
         <div class="filter-content collapse show" id="collapse_2" >
             <div class="card-body">
                 <ul class="list-menu">
-                   <li><a (click)= "successfulLaunch('true')" [ngClass]="{'selected': islaunch === 'true'}"  href="#">True</a></li>
-                   <li><a (click)= "successfulLaunch('false')" [ngClass]="{'selected': islaunch === 'false'}" href="#">False</a></li>
+                   <li><a (click)= "successfulLaunch('true')" [ngClass]="{'selected': islaunch === 'true'}"  href="javascript:void(0)">True</a></li>
+                   <li><a (click)= "successfulLaunch('false')" [ngClass]="{'selected': islaunch === 'false'}" href="javascript:void(0)">False</a></li>
                 </ul>
 
             </div> <!-- card-body.// -->
@@ -50,8 +50,8 @@
         <div class="filter-content collapse show" id="collapse_3" >
             <div class="card-body">
                 <ul class="list-menu">
-                    <li><a (click)= "successfulLanding('true')" [ngClass]="{'selected': islanding === 'true'}"  href="#">True</a></li>
-                    <li><a (click)= "successfulLanding('false')" [ngClass]="{'selected': islanding === 'false'}" href="#">False</a></li>
+                    <li><a (click)= "successfulLanding('true')" [ngClass]="{'selected': islanding === 'true'}"  href="javascript:void(0)">True</a></li>
+                    <li><a (click)= "successfulLanding('false')" [ngClass]="{'selected': islanding === 'false'}" href="javascript:void(0)">False</a></li>
                  </ul>
 
             </div> <!-- card-body.// -->

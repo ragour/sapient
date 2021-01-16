@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from 'src/app/shared/services/common/common.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: '[app-sidebar]',
@@ -13,7 +14,8 @@ export class SidebarComponent implements OnInit {
   public islanding: string;
   
   constructor(
-    private readonly commonService: CommonService
+    private readonly commonService: CommonService,
+    private readonly router: Router
   ) { 
     this.listOfLaunchYear = new Array();
   }
@@ -24,21 +26,24 @@ export class SidebarComponent implements OnInit {
 
   public selectByyear(year: any): void {
     this.isYearSelected =  this.isYearSelected === year ? '' : year;
-    this.commonService.getLaunches(this.getprepareQueryparams());
+    // this.commonService.getLaunches(this.getprepareQueryparams());
+    this.getprepareQueryparams();
   }
 
   public successfulLaunch(islaunch: string): void {
     this.islaunch =  this.islaunch === islaunch ? '' : islaunch;
-    this.commonService.getLaunches(this.getprepareQueryparams());
+    // this.commonService.getLaunches(this.getprepareQueryparams());
+    this.getprepareQueryparams();
   }
 
   public successfulLanding(islanding: string): void {
     this.islanding =  this.islanding === islanding ? '' : islanding;
-    this.commonService.getLaunches(this.getprepareQueryparams());
+    // this.commonService.getLaunches(this.getprepareQueryparams());
+    this.getprepareQueryparams();
   }
 
-  public getprepareQueryparams(): string {
-    let url = `?limit=100`;
+  public getprepareQueryparams(): void {
+    let url = `home/?limit=100`;
     if (this.isYearSelected) {
       url = `${url}&launch_year=${this.isYearSelected}`;
     }
@@ -48,7 +53,8 @@ export class SidebarComponent implements OnInit {
     if (this.islanding) {
       url = `${url}&land_success=${this.islanding}`;
     }
-    return  url
+    this.router.navigate([url]);
+    //return  url
   }
 
 }
